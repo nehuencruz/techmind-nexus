@@ -1,0 +1,497 @@
+{
+  "version": 1,
+  "descripcion": "Base de conocimiento inicial de TECHMIND Nexus. Se carga en SQLite la primera vez que se ejecuta el sistema.",
+  "intenciones": [
+    {
+      "tag": "saludo",
+      "categoria": "general",
+      "ejemplos": [
+        "hola",
+        "buenas",
+        "buen dia",
+        "buenas tardes",
+        "buenas noches",
+        "hola que tal",
+        "hey",
+        "holaa como andas",
+        "que onda",
+        "hola bot",
+        "saludos",
+        "hola necesito ayuda",
+        "hola buen dia necesito una mano",
+        "buenas como estas",
+        "hola techmind"
+      ],
+      "respuestas": [
+        "¡Hola! Soy TECHMIND Nexus, tu asistente de soporte técnico. Contame qué problema tenés con tu PC, red o software.",
+        "¡Buenas! Soy TECHMIND Nexus. ¿En qué te puedo ayudar hoy? Podés preguntarme sobre hardware, software o redes."
+      ]
+    },
+    {
+      "tag": "despedida",
+      "categoria": "general",
+      "ejemplos": [
+        "chau",
+        "adios",
+        "nos vemos",
+        "hasta luego",
+        "me voy",
+        "bye",
+        "hasta mañana",
+        "chau gracias por todo",
+        "eso es todo",
+        "nada mas",
+        "listo me voy",
+        "bueno me tengo que ir",
+        "chao",
+        "hasta la proxima"
+      ],
+      "respuestas": [
+        "¡Hasta luego! Si vuelve a fallar algo, acá estoy.",
+        "¡Chau! Que te funcione todo bien."
+      ]
+    },
+    {
+      "tag": "agradecimiento",
+      "categoria": "general",
+      "ejemplos": [
+        "gracias",
+        "muchas gracias",
+        "genial gracias",
+        "me sirvio",
+        "funciono gracias",
+        "excelente",
+        "joya",
+        "barbaro",
+        "perfecto ya anda",
+        "mil gracias",
+        "buenisimo",
+        "gracias capo",
+        "te pasaste gracias",
+        "ya se soluciono gracias"
+      ],
+      "respuestas": [
+        "¡De nada! ¿Necesitás algo más?",
+        "¡Me alegra que se haya solucionado! ¿Te ayudo con otra cosa?"
+      ]
+    },
+    {
+      "tag": "capacidades",
+      "categoria": "general",
+      "ejemplos": [
+        "que podes hacer",
+        "en que me podes ayudar",
+        "ayuda",
+        "que sabes hacer",
+        "para que servis",
+        "que temas conoces",
+        "como funcionas",
+        "que tipo de problemas resolves",
+        "quien sos",
+        "menu",
+        "que comandos hay",
+        "que preguntas puedo hacerte",
+        "explicame que haces"
+      ],
+      "respuestas": [
+        "Puedo ayudarte con:\n• PC que no enciende, lenta o que se recalienta\n• Pantalla azul, virus y malware\n• Problemas de internet, WiFi e IP\n• Impresoras, sonido, disco lleno, memoria RAM\n• Contraseñas olvidadas y copias de seguridad\n• Estado del laboratorio (temperatura y humedad del sensor)\n\nComandos: /historial, /volver, /cancelar, /estado, /ayuda"
+      ]
+    },
+    {
+      "tag": "pc_no_enciende",
+      "categoria": "hardware",
+      "arbol": "pc_no_enciende",
+      "ejemplos": [
+        "mi pc no enciende",
+        "la computadora no prende",
+        "no arranca la pc",
+        "aprieto el boton y no pasa nada",
+        "la compu no da señales de vida",
+        "no enciende el equipo",
+        "mi computadora no quiere encender",
+        "prendo la pc y no hace nada",
+        "la notebook no prende",
+        "el gabinete no enciende",
+        "no prende ni una luz",
+        "la pc esta muerta",
+        "la pc no da imagen al prender",
+        "no prende el monitor ni la cpu",
+        "se apago y no vuelve a prender",
+        "la fuente no enciende",
+        "no responde el boton de encendido"
+      ],
+      "respuestas": [
+        "Vamos a diagnosticarlo paso a paso. Respondé Sí o No."
+      ]
+    },
+    {
+      "tag": "sin_internet",
+      "categoria": "redes",
+      "arbol": "sin_internet",
+      "ejemplos": [
+        "no tengo internet",
+        "se cayo internet",
+        "no me anda internet",
+        "no carga ninguna pagina",
+        "no hay conexion",
+        "sin acceso a internet",
+        "internet no funciona",
+        "no puedo navegar",
+        "dice sin conexion",
+        "no conecta a internet",
+        "se corto internet",
+        "no tengo red",
+        "se cayo la red",
+        "no anda la red",
+        "no me anda el wifi",
+        "el wifi esta conectado pero sin internet",
+        "no puedo entrar a ninguna pagina",
+        "el router no da internet"
+      ],
+      "respuestas": [
+        "Hagamos un diagnóstico de red. Respondé Sí o No."
+      ]
+    },
+    {
+      "tag": "wifi_lento",
+      "categoria": "redes",
+      "ejemplos": [
+        "el wifi anda lento",
+        "internet muy lento",
+        "tarda mucho en cargar",
+        "la conexion es lenta",
+        "se corta el wifi a cada rato",
+        "poca señal de wifi",
+        "el wifi va muy despacio",
+        "internet anda para atras",
+        "los videos se traban por internet",
+        "mucho lag en internet",
+        "baja velocidad de internet",
+        "internet se corta seguido",
+        "la señal del wifi es debil",
+        "el ping esta muy alto",
+        "descarga muy lenta",
+        "la velocidad no es la que pague"
+      ],
+      "respuestas": [
+        "Para mejorar una conexión lenta:\n1. Hacé un test de velocidad (fast.com o speedtest.net) y compará con lo que contrataste.\n2. Acercate al router o sacá obstáculos (paredes, microondas, espejos).\n3. Reiniciá el router: desenchufalo 30 segundos.\n4. Si tu router es doble banda, usá la red de 5 GHz (más rápida, menos alcance).\n5. Revisá que no haya descargas o actualizaciones en segundo plano.\n6. Cambiá el canal WiFi desde la configuración del router (192.168.0.1 o 192.168.1.1).\n7. Si podés, probá con cable de red: si por cable anda bien, el problema es el WiFi."
+      ]
+    },
+    {
+      "tag": "pc_lenta",
+      "categoria": "software",
+      "ejemplos": [
+        "mi pc esta muy lenta",
+        "la computadora anda lenta",
+        "tarda mucho en abrir programas",
+        "se tilda todo el tiempo",
+        "la compu va lentisima",
+        "tarda en arrancar windows",
+        "se cuelga la pc",
+        "todo funciona lento",
+        "la notebook se pone lenta",
+        "como acelero mi pc",
+        "el equipo esta muy pesado",
+        "se congela la pantalla",
+        "la pc se traba",
+        "windows anda lento",
+        "la cpu esta al 100",
+        "el disco esta al 100 por ciento",
+        "se queda pensando mucho"
+      ],
+      "respuestas": [
+        "Pasos para acelerar tu PC:\n1. Abrí el Administrador de tareas (Ctrl+Shift+Esc) y fijate qué consume CPU, memoria o disco.\n2. En la pestaña Inicio, deshabilitá los programas que no necesitás al arrancar.\n3. Liberá espacio: buscá 'Liberador de espacio en disco' y borrá temporales.\n4. Desinstalá programas que no usás (Configuración > Aplicaciones).\n5. Pasá un antivirus completo, el malware ralentiza mucho.\n6. Si el disco está al 100% seguido y es HDD, la mejora más grande es pasar a un SSD.\n7. Con menos de 8 GB de RAM, ampliarla también ayuda bastante."
+      ]
+    },
+    {
+      "tag": "pantalla_azul",
+      "categoria": "software",
+      "ejemplos": [
+        "me salio pantalla azul",
+        "pantalla azul de la muerte",
+        "error bsod",
+        "se reinicia con pantalla azul",
+        "aparece una carita triste en azul",
+        "tu pc tuvo un problema y necesita reiniciarse",
+        "error critical process died",
+        "pantalla azul al iniciar",
+        "blue screen",
+        "me tira pantalla azul jugando",
+        "me aparece un error azul y se reinicia",
+        "error memory management",
+        "la pc se reinicia sola con un codigo de error",
+        "pantallazo azul"
+      ],
+      "respuestas": [
+        "Ante una pantalla azul (BSOD):\n1. Anotá el código de detención que aparece (ej: CRITICAL_PROCESS_DIED, MEMORY_MANAGEMENT).\n2. Si empezó después de instalar algo (driver, programa, actualización), desinstalalo o usá 'Restaurar sistema'.\n3. Actualizá los drivers, sobre todo de video y chipset.\n4. Probá la RAM: buscá 'Diagnóstico de memoria de Windows'.\n5. Revisá el disco: en CMD como administrador, 'chkdsk C: /f'.\n6. Reparar archivos del sistema: 'sfc /scannow' y luego 'DISM /Online /Cleanup-Image /RestoreHealth'.\n7. Si no podés entrar a Windows, iniciá en Modo seguro (reiniciá 3 veces durante el arranque para ver las opciones)."
+      ]
+    },
+    {
+      "tag": "virus_malware",
+      "categoria": "seguridad",
+      "ejemplos": [
+        "creo que tengo un virus",
+        "me entro un virus",
+        "tengo malware",
+        "me aparecen publicidades raras",
+        "se abren paginas solas",
+        "el navegador cambio solo la pagina de inicio",
+        "como saco un virus",
+        "me hackearon la pc",
+        "el antivirus detecto una amenaza",
+        "tengo un troyano",
+        "ransomware me cifro los archivos",
+        "me llegan ventanas emergentes",
+        "creo que me infecte",
+        "descargue algo raro y ahora anda mal",
+        "como se si tengo virus",
+        "necesito un antivirus"
+      ],
+      "respuestas": [
+        "Para limpiar un posible virus:\n1. Desconectá la PC de internet para evitar que se propague.\n2. Pasá un análisis completo con Windows Defender (Seguridad de Windows > Protección antivirus > Examen completo).\n3. Hacé un segundo análisis con Malwarebytes (versión gratuita).\n4. Revisá Configuración > Aplicaciones y desinstalá programas que no reconozcas.\n5. Restablecé el navegador y eliminá extensiones sospechosas.\n6. Cambiá tus contraseñas desde OTRO dispositivo limpio.\n7. Si es ransomware, no pagues: buscá el nombre en nomoreransom.org y restaurá desde una copia de seguridad."
+      ]
+    },
+    {
+      "tag": "impresora",
+      "categoria": "hardware",
+      "ejemplos": [
+        "la impresora no imprime",
+        "no anda la impresora",
+        "la impresora no aparece",
+        "se atasco el papel",
+        "la impresora dice fuera de linea",
+        "imprime en blanco",
+        "no detecta la impresora",
+        "cola de impresion trabada",
+        "como instalo una impresora",
+        "la impresora imprime manchado",
+        "error de impresora",
+        "la impresora no saca las hojas",
+        "no puedo imprimir",
+        "la impresora no se conecta al wifi",
+        "impresora sin tinta",
+        "la impresora hace ruido y no imprime"
+      ],
+      "respuestas": [
+        "Revisá la impresora así:\n1. Verificá que esté encendida, con papel, tinta/tóner y sin papel atascado.\n2. Comprobá el cable USB o que esté en la misma red WiFi que la PC.\n3. Si dice 'Fuera de línea': Configuración > Impresoras > elegila > desmarcá 'Usar impresora sin conexión'.\n4. Limpiá la cola: Win+R > services.msc > reiniciá el servicio 'Cola de impresión'.\n5. Reinstalá el driver desde la página oficial del fabricante.\n6. Si imprime en blanco o manchado, hacé la 'limpieza de cabezales' desde el software de la impresora."
+      ]
+    },
+    {
+      "tag": "sobrecalentamiento",
+      "categoria": "hardware",
+      "ejemplos": [
+        "mi pc se calienta mucho",
+        "la notebook levanta mucha temperatura",
+        "el procesador esta muy caliente",
+        "el ventilador hace mucho ruido",
+        "se apaga sola por calor",
+        "sobrecalentamiento",
+        "la cpu llega a 90 grados",
+        "la compu quema",
+        "el cooler suena fuerte",
+        "se recalienta jugando",
+        "la pc esta muy caliente",
+        "el ventilador no para",
+        "temperatura alta del procesador",
+        "el cpu se calienta",
+        "la placa de video se calienta mucho"
+      ],
+      "respuestas": [
+        "Para bajar la temperatura:\n1. Mirá las temperaturas con HWMonitor o Core Temp. Más de 85 °C en CPU sostenido es demasiado.\n2. Limpiá el polvo de ventiladores y rejillas con aire comprimido (con la PC apagada y desenchufada).\n3. Usá la notebook sobre superficie dura, nunca sobre cama o almohada.\n4. Cambiá la pasta térmica del procesador si tiene más de 2–3 años.\n5. Verificá que todos los coolers giren.\n6. Mejorá el flujo de aire del gabinete: aire frío entra por adelante, sale caliente por atrás/arriba."
+      ]
+    },
+    {
+      "tag": "disco_lleno",
+      "categoria": "software",
+      "ejemplos": [
+        "el disco esta lleno",
+        "no tengo espacio en el disco",
+        "me quede sin almacenamiento",
+        "el disco c esta en rojo",
+        "como libero espacio",
+        "poco espacio disponible",
+        "no puedo instalar por falta de espacio",
+        "se lleno la memoria de la pc",
+        "que ocupa tanto espacio",
+        "almacenamiento lleno",
+        "me quede sin espacio",
+        "el disco duro se lleno",
+        "no me queda lugar en la pc",
+        "quiero borrar archivos para tener espacio",
+        "el ssd esta lleno"
+      ],
+      "respuestas": [
+        "Para liberar espacio en disco:\n1. Buscá 'Liberador de espacio en disco' > 'Limpiar archivos del sistema'.\n2. Activá el Sensor de almacenamiento (Configuración > Sistema > Almacenamiento).\n3. Vaciá la Papelera y revisá la carpeta Descargas.\n4. Desinstalá juegos y programas que no uses.\n5. Usá WizTree o WinDirStat para ver qué carpetas ocupan más.\n6. Pasá fotos y videos a un disco externo o a la nube."
+      ]
+    },
+    {
+      "tag": "contrasena_olvidada",
+      "categoria": "seguridad",
+      "ejemplos": [
+        "me olvide la contraseña",
+        "no recuerdo mi clave",
+        "olvide la contraseña de windows",
+        "no puedo iniciar sesion",
+        "perdi la contraseña del mail",
+        "como recupero mi cuenta",
+        "me bloquearon la cuenta",
+        "olvide el pin",
+        "no me acuerdo la clave del wifi",
+        "recuperar contraseña",
+        "no me acuerdo la contraseña",
+        "perdi mi contraseña",
+        "olvide mi usuario y clave",
+        "como cambio la contraseña",
+        "no puedo entrar a mi cuenta"
+      ],
+      "respuestas": [
+        "Según el caso:\n• Cuenta Microsoft en Windows: en la pantalla de inicio tocá '¿Olvidaste tu contraseña?' o entrá a account.live.com/password/reset desde otro dispositivo.\n• Cuenta local de Windows: respondé las preguntas de seguridad; si no las configuraste, necesitás otra cuenta de administrador.\n• Gmail/redes sociales: usá 'Olvidé mi contraseña' y recuperá con tu celular o mail alternativo.\n• Clave del WiFi: en una PC ya conectada, en CMD: netsh wlan show profile name=\"NOMBRE_RED\" key=clear (aparece en 'Contenido de la clave').\n\nConsejo: usá un gestor de contraseñas como Bitwarden y activá la verificación en dos pasos."
+      ]
+    },
+    {
+      "tag": "sin_sonido",
+      "categoria": "hardware",
+      "ejemplos": [
+        "no tengo sonido",
+        "no se escucha nada",
+        "no anda el audio",
+        "los parlantes no suenan",
+        "no funcionan los auriculares",
+        "el sonido no sale",
+        "sin audio en la pc",
+        "el microfono no anda",
+        "no escucho los videos",
+        "se fue el sonido",
+        "no se oye nada",
+        "no se escucha el audio",
+        "los auriculares no se escuchan",
+        "no suena la pc",
+        "el volumen no funciona"
+      ],
+      "respuestas": [
+        "Para recuperar el sonido:\n1. Revisá que no esté silenciado y subí el volumen (también el de la aplicación).\n2. Hacé clic en el ícono de volumen y elegí el dispositivo de salida correcto (parlantes o auriculares).\n3. Verificá cables y que los parlantes estén encendidos; en PC de escritorio, la salida es el conector verde.\n4. Clic derecho en el ícono de sonido > 'Solucionar problemas de sonido'.\n5. Administrador de dispositivos > Controladoras de sonido > actualizá o reinstalá el driver.\n6. Para el micrófono: Configuración > Privacidad > Micrófono, y permití el acceso a las apps."
+      ]
+    },
+    {
+      "tag": "memoria_ram",
+      "categoria": "hardware",
+      "ejemplos": [
+        "que es la memoria ram",
+        "cuanta ram necesito",
+        "como agrego mas ram",
+        "como se cuanta ram tengo",
+        "que ram es compatible con mi pc",
+        "ampliar memoria ram",
+        "diferencia entre ram y disco",
+        "la ram esta al 100",
+        "ddr4 o ddr5",
+        "conviene poner mas memoria",
+        "cuanta memoria tiene mi pc",
+        "que memoria ram comprar",
+        "la memoria se llena",
+        "para que sirve la ram",
+        "cuantos gb de ram tengo"
+      ],
+      "respuestas": [
+        "La RAM es la memoria de trabajo: guarda lo que la PC está usando ahora y se borra al apagar. El disco guarda los archivos de forma permanente.\n• Ver cuánta tenés: Ctrl+Shift+Esc > Rendimiento > Memoria (también muestra tipo y slots libres).\n• Cuánta conviene: 8 GB uso básico, 16 GB para programar, multitarea o juegos, 32 GB para edición de video.\n• Compatibilidad: tiene que coincidir el tipo (DDR3/DDR4/DDR5) y el formato (DIMM para escritorio, SO-DIMM para notebook). Revisá el manual de tu placa madre o usá CPU-Z.\n• Lo ideal es instalarla en pares iguales para aprovechar el doble canal."
+      ]
+    },
+    {
+      "tag": "ip_red",
+      "categoria": "redes",
+      "ejemplos": [
+        "como veo mi ip",
+        "cual es mi direccion ip",
+        "que es una ip",
+        "como saber la ip de mi pc",
+        "que es ipconfig",
+        "diferencia entre ip publica y privada",
+        "que es la puerta de enlace",
+        "que es el dns",
+        "que es una mascara de subred",
+        "como hago ping",
+        "como veo la ip del router",
+        "como averiguo mi ip publica",
+        "que es el protocolo ip",
+        "para que sirve el comando ping",
+        "que significa dhcp"
+      ],
+      "respuestas": [
+        "Una dirección IP identifica a tu dispositivo en la red.\n• IP privada (en tu red local, ej. 192.168.0.15): abrí CMD y escribí 'ipconfig'. En Linux/Mac: 'ip a' o 'ifconfig'.\n• IP pública (la que ve internet): entrá a cualmeip.com.ar o whatismyip.com.\n• Puerta de enlace: la IP del router (suele ser 192.168.0.1 o 192.168.1.1).\n• DNS: traduce nombres (google.com) a IP. Podés usar 8.8.8.8 o 1.1.1.1.\n• Máscara de subred (ej. 255.255.255.0): indica qué parte de la IP corresponde a la red.\n• Probar conexión: 'ping 8.8.8.8' (si responde, hay salida a internet)."
+      ]
+    },
+    {
+      "tag": "backup",
+      "categoria": "software",
+      "ejemplos": [
+        "como hago una copia de seguridad",
+        "quiero hacer un backup",
+        "como respaldo mis archivos",
+        "como guardo mis fotos para no perderlas",
+        "copia de seguridad en la nube",
+        "como recupero archivos borrados",
+        "borre un archivo sin querer",
+        "respaldar la pc",
+        "hacer backup de windows",
+        "se me borro una carpeta",
+        "quiero guardar mis archivos en un disco externo",
+        "como subo mis archivos a la nube",
+        "perdi archivos importantes",
+        "respaldo de documentos",
+        "como no perder mis datos"
+      ],
+      "respuestas": [
+        "Copias de seguridad (regla 3-2-1: 3 copias, en 2 medios distintos, 1 fuera de casa):\n1. Nube: Google Drive, OneDrive o Dropbox sincronizan carpetas automáticamente.\n2. Disco externo: Configuración > Sistema > Almacenamiento > Copias de seguridad, o 'Historial de archivos' de Windows.\n3. Para archivos borrados: revisá la Papelera; si no están, dejá de usar ese disco y probá Recuva o Windows File Recovery lo antes posible.\n4. Probá de vez en cuando restaurar un archivo: un backup que nunca probaste no es un backup."
+      ]
+    },
+    {
+      "tag": "estado_sistema",
+      "categoria": "laboratorio",
+      "ejemplos": [
+        "que temperatura hace en el laboratorio",
+        "cual es la temperatura",
+        "como esta la humedad",
+        "estado del sistema",
+        "que marca el sensor",
+        "lectura del dht22",
+        "hace calor en el aula",
+        "como estan los sensores",
+        "temperatura ambiente",
+        "mostrame los datos del sensor",
+        "cuanto marca el dht22",
+        "que humedad hay",
+        "temperatura del aula",
+        "como esta el ambiente del laboratorio",
+        "datos del arduino"
+      ],
+      "respuestas": [
+        "Estado del laboratorio:\n🌡️ Temperatura: {temperatura}\n💧 Humedad: {humedad}\n🔌 Arduino UNO: {estado_uno}\n📟 ESP32-S3 / LCD: {estado_esp32}"
+      ]
+    },
+    {
+      "tag": "fuera_de_tema",
+      "categoria": "general",
+      "ejemplos": [
+        "quien gano el partido",
+        "como esta el clima",
+        "contame un chiste",
+        "cual es tu comida favorita",
+        "receta de milanesas",
+        "quien es el presidente",
+        "me compre un perro",
+        "que pelicula me recomendas",
+        "cuanto es dos mas dos",
+        "de que equipo sos",
+        "tengo hambre",
+        "como hago una torta",
+        "que hora es",
+        "quien gano el mundial",
+        "cuentame una historia",
+        "me ayudas con la tarea de historia"
+      ],
+      "respuestas": [
+        "Eso está fuera de mi especialidad 😅. Soy un bot de soporte técnico: preguntame sobre hardware, software o redes. Escribí /ayuda para ver los temas."
+      ]
+    }
+  ]
+}

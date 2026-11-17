@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHMIND Nexus · Soporte Técnico</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="barra">
+    <div class="marca">
+      <span class="logo">◆</span>
+      <div>
+        <h1>TECHMIND <b>Nexus</b></h1>
+        <small>Chatbot de soporte técnico · NLP TF-IDF + SVM</small>
+      </div>
+    </div>
+    <div class="pildoras">
+      <span class="pildora" id="p-uno"><i></i>Arduino UNO</span>
+      <span class="pildora" id="p-esp"><i></i>ESP32-S3</span>
+      <span class="pildora dato" id="p-temp">🌡️ --</span>
+      <span class="pildora dato" id="p-hum">💧 --</span>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="chat">
+      <div id="alertas"></div>
+      <div id="mensajes" class="mensajes" aria-live="polite"></div>
+      <div id="opciones" class="opciones"></div>
+      <form id="form-chat" class="entrada" autocomplete="off">
+        <input id="entrada" type="text" maxlength="500"
+               placeholder="Describí tu problema… (ej: mi pc no enciende)" required>
+        <button type="submit" aria-label="Enviar">➤</button>
+      </form>
+    </section>
+
+    <aside class="panel">
+      <div class="tarjeta">
+        <h2>Temas rápidos</h2>
+        <div class="chips" id="chips">
+          <button data-msg="mi pc no enciende">PC no enciende</button>
+          <button data-msg="no tengo internet">Sin internet</button>
+          <button data-msg="mi pc esta muy lenta">PC lenta</button>
+          <button data-msg="me salio pantalla azul">Pantalla azul</button>
+          <button data-msg="creo que tengo un virus">Virus</button>
+          <button data-msg="que temperatura hace en el laboratorio">Sensor DHT22</button>
+          <button data-msg="/historial">/historial</button>
+          <button data-msg="/stats">/stats</button>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <h2>Laboratorio</h2>
+        <canvas id="grafico" width="300" height="90"></canvas>
+        <p class="leyenda"><span class="c-temp">━ Temperatura</span> <span class="c-hum">━ Humedad</span></p>
+      </div>
+
+      <details class="tarjeta">
+        <summary><h2>Enseñarle al bot</h2></summary>
+        <form id="form-ensenar" class="ensenar">
+          <label>Nombre del tema
+            <input name="nombre" placeholder="Ej: Teclado no funciona" required></label>
+          <label>Frases de ejemplo (una por línea, mínimo 3)
+            <textarea name="ejemplos" rows="4" required
+              placeholder="el teclado no anda&#10;no escribe el teclado&#10;se traban las teclas"></textarea></label>
+          <label>Respuesta del bot
+            <textarea name="respuesta" rows="4" required
+              placeholder="1. Probá el teclado en otro puerto USB…"></textarea></label>
+          <label>Categoría
+            <select name="categoria">
+              <option>hardware</option><option>software</option>
+              <option>redes</option><option>seguridad</option><option>general</option>
+            </select></label>
+          <button type="submit">Guardar y reentrenar</button>
+          <p id="ensenar-estado" class="estado-form"></p>
+        </form>
+      </details>
+    </aside>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

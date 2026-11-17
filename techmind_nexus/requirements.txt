@@ -1,0 +1,6 @@
+# Instalar con:  pip install -r requirements.txt
+flask>=3.0
+scikit-learn>=1.4
+nltk>=3.8
+websocket-client>=1.7
+pyserial>=3.5
